@@ -23,7 +23,7 @@ const NavBar = () => {
         <AppBar /*className={classes.appbar} */style={{background : "white"}}  position="static">
             <Toolbar>
                 <Typography variant="h6" align="center" /*className={classes.typography}*/ style={{color : "black"}}>
-                  Cybersecurity courses
+                  Welcome to Online Tutorial Website 
                 </Typography>
             </Toolbar>
         </AppBar>
