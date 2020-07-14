@@ -4,8 +4,8 @@ import TextField from '@material-ui/core/TextField';
 import * as contentful from 'contentful'
 import Course from './Course'
 
-const SPACE_ID = ''
-const ACCESS_TOKEN = ''
+const SPACE_ID = 'xth14sglusza'
+const ACCESS_TOKEN = '8Z7-JaUrg_Bj__3Aq3MUHWSTfWzYKAwMeHeK3LIJuZM'
 const client = contentful.createClient({
     space: SPACE_ID,
     accessToken: ACCESS_TOKEN
@@ -48,7 +48,7 @@ class CourseList extends Component
     render(){
         return(
             <div>
-                {this.state.course ? (
+                {this.state.courses ? (
                     <div>
                         <TextField style={{padding: 24}}
                         id="searchInput"
@@ -57,7 +57,7 @@ class CourseList extends Component
                         onChange={this.onsearchInputChange}/>
                         <Grid cointainer spacing ={24} style={{padding: 24}}>
                             {this.state.courses.map(currentcourse=> (
-                                <Grid item xs={12} sm={6} lg={4} xl={3}>
+                                <Grid style={{width:'100%'}} item xs={12} sm={6} lg={4} xl={3}>
                                     <Course course={currentcourse}/>
                                 </Grid>
 

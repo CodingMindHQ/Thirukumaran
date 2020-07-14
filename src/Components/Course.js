@@ -11,10 +11,11 @@ const Course = (props) => {
         <div>
             { props.course ? (
                 <Card >
-                    <CardMedia style={{height: 0, paddingTop: '56.25%'}}
+                    <CardMedia style={{height: 0, width:'100%', paddingTop: '56.25%'}}
                     image={props.course.fields.courseImage.fields.file.url}
                     title={props.course.fields.title}
                     />
+                    
                     <CardContent>
                     <Typography gutterBottom variant="headline" component="h2">
                         {props.course.fields.title}
@@ -24,11 +25,11 @@ const Course = (props) => {
                     </Typography>
                     </CardContent>
                     <CardActions>
-                    <Button size="small" color="primary" href={props.course.fields.url} target="_blank">
+                    <Button size="small" color="orange" href={props.course.fields.url} target="_blank">
                         Go To Course
                     </Button>
                     </CardActions>
-                </Card>
+               </Card>
             ) : null}
         </div>
     )
