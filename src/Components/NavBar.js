@@ -5,9 +5,9 @@ import Typography from '@material-ui/core/Typography'
 const NavBar = () => {
     return(
         <div>
-        <AppBar position="static">
+        <AppBar style={{background : "gray"}} position="absolute">
             <Toolbar>
-                <Typography variant="title" color="yellow">
+                <Typography variant="title"style={{color : "red"}}>
                   Learn Python
                 </Typography>
             </Toolbar>
