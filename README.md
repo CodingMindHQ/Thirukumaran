@@ -12,7 +12,7 @@ After Installing both the application follw the steps to install npm.
 
 * Open Vscode App in the extension window install *Node.js Modules Intellisense , node.js Extension Pack and VS code for Node.js* extensions to run without any errors.
 * Now open terminal in VScode and create react app.
-> To creae a new React app type: 
+> To create a new React app type: 
 ```sh 
 npx create-react-app my-app  
 ```
