@@ -25,7 +25,7 @@ const Course = (props) => {
                     </Typography>
                     </CardContent>
                     <CardActions>
-                    <Button size="small" color="orange" href={props.course.fields.url} target="_blank">
+                    <Button size="small" color="primary" href={props.course.fields.url} target="_blank">
                         Go To Course
                     </Button>
                     </CardActions>

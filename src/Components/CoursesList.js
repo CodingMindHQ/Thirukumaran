@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import * as contentful from 'contentful'
-import Course from './Course'
+import Course from '../Components/Course'
 
 const SPACE_ID = 'xth14sglusza'
 const ACCESS_TOKEN = '8Z7-JaUrg_Bj__3Aq3MUHWSTfWzYKAwMeHeK3LIJuZM'
@@ -10,7 +10,7 @@ const client = contentful.createClient({
     space: SPACE_ID,
     accessToken: ACCESS_TOKEN
 })
-class CourseList extends Component
+class CoursesList extends Component
  {
     state = {
         courses: [],
@@ -34,14 +34,12 @@ class CourseList extends Component
           console.error(error)
         })
     }
-
-    onSearchInput =(event)=>{
-        if(event.target.value){
-            this.setState({searchstring: event.target.value})
-
-        }else{
+    onSearchInputChange = (event) => {
+        console.log("Search changed ..." + event.target.value)
+        if (event.target.value) {
+            this.setState({searchString: event.target.value})
+        } else {
             this.setState({searchString: ''})
-    
         }
         this.getCourses()
     }
@@ -50,23 +48,22 @@ class CourseList extends Component
             <div>
                 {this.state.courses ? (
                     <div>
-                        <TextField style={{padding: 24}}
-                        id="searchInput"
-                        placeholder="Search for Courses"
-                        margin="normal"
+                        <TextField  style={{padding :6}} variant="outlined"  label="Search for Courses" id="outlined-size-small"   size="large"  id="searchInput"
+                    margin="normal" 
                         onChange={this.onsearchInputChange}/>
-                        <Grid cointainer spacing ={24} style={{padding: 24}}>
+                        <Grid style={{padding :15}} container direction="row" flex-grow={1} spacing={7}   >
                             {this.state.courses.map(currentcourse=> (
-                                <Grid style={{width:'100%'}} item xs={12} sm={6} lg={4} xl={3}>
+                                <Grid   item xs={11} sm={7} lg={4} xl={3}>
                                     <Course course={currentcourse}/>
                                 </Grid>
 
                             ))}
                         </Grid>
                   </div>
-                ):"No courses found" }
+                ):"No courses found" }<center><p >© <a href="http://www.codingmind.in" target="_blank">codingmind.in</a> | <a href="http://www.codingmind.in" target="_blank">Imprint</a> | <a href="http://www.codingmind.in" target="_blank">Data Privacy Statement</a> 
+        | <a href="" target="_blank">Affiliate Disclaimer</a></p></center>
             </div>
          )
        }
     }
-    export default CourseList;
+    export default CoursesList;
